@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nom": "Anna Garcia",
+    "email": "anna@example.com",
+    "telefon": "612345678",
+    "createdAt": "2024-01-15T10:30:00.000Z",
+    "updatedAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "nom": "Pere Rodriguez",
+    "email": "pere@example.com",
+    "telefon": "687654321",
+    "createdAt": "2024-01-20T14:15:00.000Z",
+    "updatedAt": "2024-02-10T11:20:00.000Z"
+  },
+  {
+    "id": 3,
+    "nom": "Maria Lopez",
+    "email": "maria@example.com",
+    "telefon": "699887766",
+    "createdAt": "2024-02-05T09:45:00.000Z",
+    "updatedAt": "2024-02-05T09:45:00.000Z"
+  },
+  {
+    "id": 4,
+    "nom": "Joan Martinez",
+    "email": "joan@example.com",
+    "telefon": "633445566",
+    "createdAt": "2024-02-18T16:30:00.000Z",
+    "updatedAt": "2024-02-20T13:10:00.000Z"
+  }
+]

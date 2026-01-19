@@ -1,0 +1,781 @@
+/* ============================================
+   ESTILOS GLOBALES MINIMALISTAS
+   ============================================ */
+
+:root {
+    --primary: #135bec;
+    --background-light: #ffffff;
+    --background-dark: #101622;
+    --text-light: #0d121b;
+    --text-dark: #ffffff;
+    --border-light: #e7ebf3;
+    --border-dark: #2d3748;
+    --gray-100: #f8fafc;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --red-500: #ef4444;
+    --green-500: #10b981;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+small {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+/* ============================================
+   LAYOUT Y CONTENEDORES
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ============================================
+   HEADER Y NAVEGACIÓN
+   ============================================ */
+
+header {
+    border-bottom: 1px solid var(--border-light);
+    background-color: white;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.logo-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.25rem;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0f4fd8;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--gray-300);
+    color: var(--gray-700);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gray-400);
+    color: var(--gray-800);
+}
+
+.btn-danger {
+    background-color: transparent;
+    border: 1px solid var(--red-500);
+    color: var(--red-500);
+}
+
+.btn-danger:hover {
+    background-color: var(--red-500);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--green-500);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #0da271;
+}
+
+.btn-small {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.minimal-input {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid var(--gray-300);
+    background-color: transparent;
+    color: var(--text-light);
+    transition: border-color 0.2s;
+}
+
+.minimal-input:focus {
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+
+.minimal-input::placeholder {
+    color: var(--gray-400);
+}
+
+.form-help {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-checkbox input {
+    width: auto;
+}
+
+.form-checkbox label {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ============================================
+   TABLAS
+   ============================================ */
+
+.table-container {
+    overflow-x: auto;
+    border-top: 1px solid var(--border-light);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    padding: 1rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: var(--gray-100);
+}
+
+tbody td {
+    padding: 1.25rem 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+tbody td:first-child {
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+tbody td:not(:first-child) {
+    color: var(--gray-600);
+}
+
+/* ============================================
+   SECCIONES ESPECÍFICAS
+   ============================================ */
+
+.search-section {
+    margin-bottom: 3rem;
+}
+
+.search-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.search-box {
+    position: relative;
+    max-width: 32rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.75rem;
+    background-color: white;
+    color: var(--text-light);
+    transition: all 0.2s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(19, 91, 236, 0.1);
+}
+
+.search-box::before {
+    content: "search";
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    font-size: 1.25rem;
+    pointer-events: none;
+}
+
+.search-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.contacts-section {
+    margin-top: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-count {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.no-contacts {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--gray-500);
+}
+
+.no-contacts i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.no-contacts p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-600);
+}
+
+/* ============================================
+   PÁGINA DE DETALLE
+   ============================================ */
+
+.back-link {
+    margin-bottom: 3rem;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link a:hover {
+    color: var(--primary);
+}
+
+.back-icon {
+    font-size: 1.25rem;
+}
+
+.contact-detail-section {
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.detail-header {
+    margin-bottom: 3rem;
+}
+
+.breadcrumb-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-400);
+    margin-bottom: 0.5rem;
+}
+
+.contact-name {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-light);
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-400);
+    margin-bottom: 0.75rem;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-value {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--gray-700);
+    line-height: 1.4;
+}
+
+.info-icon {
+    color: var(--gray-400);
+    cursor: pointer;
+    transition: color 0.2s;
+    font-size: 1.5rem;
+}
+
+.info-icon:hover {
+    color: var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    padding: 0;
+}
+
+.edit-btn {
+    color: var(--primary);
+}
+
+.delete-btn {
+    color: var(--red-500);
+    opacity: 0.8;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+/* ============================================
+   PÁGINA AÑADIR CONTACTO
+   ============================================ */
+
+.add-contact-section {
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+.add-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.add-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.add-header p {
+    color: var(--gray-500);
+    font-size: 0.875rem;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form-preview {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.preview-card {
+    background-color: var(--gray-100);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-200);
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.preview-header i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.preview-header h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.preview-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--gray-600);
+}
+
+.preview-info i {
+    color: var(--gray-500);
+    font-size: 1.125rem;
+}
+
+/* ============================================
+   MODALES
+   ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    max-width: 28rem;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-icon {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.modal-icon.success {
+    color: var(--green-500);
+}
+
+.modal h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.modal p {
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    border-top: 1px solid var(--border-light);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer p {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mt-12 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+/* ============================================
+   RESPONSIVIDAD
+   ============================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .contact-name {
+        font-size: 2.5rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-name {
+        font-size: 2rem;
+    }
+    
+    .info-value {
+        font-size: 1.125rem;
+    }
+    
+    .add-header h1 {
+        font-size: 2rem;
+    }
+}
